@@ -1,24 +1,9 @@
-export enum ItemType {
-  job = "job",
-  story = "story",
-  comment = "comment",
-  poll = "poll",
-  pollopt = "pollopt",
-}
-
 export type Story = {
   by: string;
-  descendants: number;
   id: number;
-  kids: number[];
-  score: number;
   time: number;
   title: string;
-  type: ItemType;
   url: string;
-  deleted: boolean;
-  text: string;
-  dead: boolean;
 };
 
 export async function getItemIdList(type?: string): Promise<number[]> {

@@ -20,7 +20,7 @@ export default async function Home({
       <h1 className="text-center font-bold text-orange-500 text-4xl pb-10">
         Hacker News
       </h1>
-      <StoriesList stories={stories} storyIds={storyIds} />
+      <StoriesList stories={stories} storyIds={storyIds || []} />
     </div>
   );
 }

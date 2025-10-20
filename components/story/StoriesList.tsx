@@ -15,14 +15,16 @@ export function StoriesList({
 }) {
   const [storyList, setStoryList] = useState<Story[]>(stories);
   const [page, setPage] = useState<number>(1);
-  const [endOfList, setEndOfList] = useState<boolean>(false);
+  const [endOfList, setEndOfList] = useState<boolean>(
+    stories.length >= storyIds.length
+  );
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
     setStoryList(stories);
     setPage(1);
-    setEndOfList(false);
-  }, [stories]);
+    setEndOfList(stories.length >= storyIds.length);
+  }, [stories, storyIds]);
 
   async function getMoreStories() {
     setLoading(true);
