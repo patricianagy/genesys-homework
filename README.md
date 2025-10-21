@@ -1,4 +1,4 @@
-The application is using next.js, tailwind css and shadcn/ui for the tab component. The unit testing is with jest.
+The application is using Next.js, Tailwind and Shadcn/ui for the tab component. The unit testing is with Jest, the end-to-end testing is with Playwright.
 
 First:
 
@@ -12,8 +12,19 @@ To run the development server:
 npm run dev
 ```
 
-To run the test:
+To run units tests:
 
 ```bash
 npm test
+```
+
+To run e2e test:
+
+```bash
+npm run build
+
+npm run start
+
+//in a different terminal
+npx playwright test
 ```

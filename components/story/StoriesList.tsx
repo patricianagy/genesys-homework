@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { getStories, getStory, Story } from "./strories";
+import { getStories, Story } from "./strories";
 import { StoryCard } from "./StoryCard";
 import { ListTypeTab } from "./ListTypeTab";
 import { useEffect, useState } from "react";
