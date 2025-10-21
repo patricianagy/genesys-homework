@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { getStory, Story } from "./strories";
+import { getStories, getStory, Story } from "./strories";
 import { StoryCard } from "./StoryCard";
 import { ListTypeTab } from "./ListTypeTab";
 import { useEffect, useState } from "react";
@@ -28,9 +28,8 @@ export function StoriesList({
 
   async function getMoreStories() {
     setLoading(true);
-    const helper = await Promise.all(
-      storyIds.slice(page * 10, (page + 1) * 10).map((id) => getStory(id))
-    );
+    const helper = await getStories(storyIds.slice(page * 10, (page + 1) * 10));
+
     setStoryList([...storyList, ...helper]);
     setPage(page + 1);
     setEndOfList(storyList.length >= storyIds.length);

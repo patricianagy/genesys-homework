@@ -38,3 +38,7 @@ export async function getStory(id: number): Promise<Story> {
     }
   });
 }
+
+export async function getStories(ids: number[]) {
+  return Promise.all(ids.map((id) => getStory(id)));
+}

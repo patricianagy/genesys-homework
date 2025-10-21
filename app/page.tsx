@@ -1,5 +1,5 @@
 import { StoriesList } from "@/components/story/StoriesList";
-import { getItemIdList, getStory, Story } from "@/components/story/strories";
+import { getItemIdList, getStories, Story } from "@/components/story/strories";
 
 export default async function Home({
   searchParams,
@@ -10,9 +10,7 @@ export default async function Home({
   const storyIds = await getItemIdList(type);
   let stories: Story[] = [];
   if (storyIds) {
-    stories = await Promise.all(
-      storyIds.slice(0, 10).map((id) => getStory(id))
-    );
+    stories = await getStories(storyIds.slice(0, 10));
   }
 
   return (
