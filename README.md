@@ -1,4 +1,4 @@
-The application is using Next.js, Tailwind and Shadcn/ui for the tab component. The unit testing is with Jest, the end-to-end testing is with Playwright.
+The application is using Next.js, Tailwind, Shadcn/ui and TypeScript. The unit testing is with Jest, the end-to-end testing is with Playwright.
 
 First:
 
